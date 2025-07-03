@@ -1,0 +1,6 @@
+#Reflection
+1. `preventDefault()` stops the integrated messages and allows for customized validity checks.
+2. HTML5 validation attributes are still needed, but JavaScript-based validation allows for more customization and detailed checks. JavaScript validation wouldn't work, it seems, without the attributes, though, as when I didn't have a `reguired` attribute, my validity check would be irrelevant.
+3. I used `localStorage` to save my username there and then prefill the field. You can not store sensitive information there because the data is easily accessible to anyone.
+4. As my email field was a `reguired` with a `type:email`, the red border around around it would pop up on load, because it was seen as immediately invalid. I had to get rid of that, I've manually added classes when checking validity. This didn't work out though so I still can not pull up a red border or green border for my fields. I'll have to ask someone why it's not working as I've logged out the class and the class is definitely added.
+5. I used devtools to see when my input was triggered and to check the value - I logged those out.
