@@ -10,7 +10,7 @@ const passwordError = document.getElementById(`passwordError`);
 const passwordMatchError = document.getElementById(`confirmPasswordError`);
 
 //checking whether username is saved to local storage
-window.addEventListener(`load`, (event) => {
+window.addEventListener(`load`, () => {
     const savedUsername = localStorage.getItem(`username`);
     if (savedUsername) {
         usernameInput.value = savedUsername;
@@ -72,8 +72,6 @@ passwordInput.addEventListener(`blur`, (event) => {
 
 //checking if matching password is empty and if it's exactly the same
 passwordMatch.addEventListener(`blur`, (event) => {
-    console.log(`password input`, passwordInput.value);
-    console.log(`password match`, passwordMatch.value);
     if (passwordMatch.validity.valueMissing) {
         passwordMatch.setCustomValidity(`Please, confirm your password`);
     } else if (passwordMatch.value !== passwordInput.value) {
@@ -92,7 +90,7 @@ passwordMatch.addEventListener(`blur`, (event) => {
 registrationForm.addEventListener(`submit`, (event) => {
     event.preventDefault();
     if (!registrationForm.checkValidity()) {
-        alert(`Please, check the fields again!`);
+        alert(`Please, correctly fill out all the fields`);
     } else {
         alert(`Form submitted`);
 //saving username to local storage and clearing input fields
